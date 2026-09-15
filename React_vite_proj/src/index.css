@@ -114,17 +114,77 @@ code {
   box-sizing: border-box;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /*text-align: center; */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f3f5;
 }
 
-section {
+button {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+.header h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.header p {
+  margin: 0;
+  color: #9ca3af;
+}
+
+/* MAIN */
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* PROFILE */
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background: #111827;
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile-info h2 {
+  margin: 0 0 5px;
+}
+
+.profile-info p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* POST */
+.post {
+  padding: 25px 0;
+  
 }
