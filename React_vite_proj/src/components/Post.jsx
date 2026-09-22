@@ -10,20 +10,6 @@ function Post({author, title, text}) {
 
             <Actions/>
         </article>
-        <article className="post">
-            <h2>{title}</h2>
-            <p className="post-text">{text}</p>
-            <p className="post-author">Автор: {author}</p>
-            
-            <Actions/>
-        </article>
-        <article className="post">
-            <h2>{title}</h2>
-            <p className="post-text">{text}</p>
-            <p className="post-author">Автор: {author}</p>
-            
-            <Actions/>
-        </article>
         </div>
     )
 }

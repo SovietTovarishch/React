@@ -1,6 +1,64 @@
+import { useState } from "react";
 import Post from "./Post";
 
 function ProfileCard() {
+    const [posts, setPosts] = useState([
+        {
+            id: 1,
+            author: 'Viktor',
+            title: 'Study React for frontend',
+            text: "какой-то осмысленный текст" 
+        },
+        {
+            id: 2,
+            author: 'Viktor',
+            title: 'Study nuclear reactors for power',
+            text: "какой-то ядерный текст" 
+        },
+        {
+            id: 3,
+            author: 'Viktor',
+            title: 'Study emotional reaction for psychology',
+            text: "какой-то психологический текст" 
+        },
+        {
+            id: 4,
+            author: 'Viktor',
+            title: 'Study reactive substances for chemistry',
+            text: "какой-то химический текст" 
+        },
+        {
+            id: 5,
+            author: 'Viktor',
+            title: 'Study reacting for youtube',
+            text: "какой-то текст" 
+        },
+        {
+            id: 6,
+            author: 'Viktor',
+            title: 'Study tractor for agriculture',
+            text: "какой-то трактор" 
+        }
+    ])
+
+    const [title, setTitle] = useState('');
+    const [text, setText] = useState("");
+
+    function addPost(event) {
+        event.preventDefault();
+
+        const newPost = {
+            id: Date.now(),
+            title: title,
+            text: text,
+            author: "Viktor"
+        }
+
+        setPosts([...posts, newPost]);
+        setTitle("");
+        setText("");
+    }
+
     return(
     <section className="profile-card">
         <div className="profile">
@@ -11,7 +69,39 @@ function ProfileCard() {
             </div>
         </div>
 
+        <form className="post-form" onSubmit={addPost}>
+            <input
+                type="text"
+                placeholder="Заголовок"
+                value={title}
+                onChange={(event) => setTitle(event.target.value)}
+            />
+            <textarea 
+                placeholder="текст для поста"
+                value={text}
+                onChange={(event) => setText(event.target.value)}
+            />
+            <button type="submit">
+                Опубликовать
+            </button>
+        </form>
+
+        {posts.map((post) => (
+            <Post
+            key={post.id}
+            author={post.author}
+            title={post.title}
+            text={post.text} />
+        ))}
+
+        {/* 
         <Post author="Viktor" title="Study react for frontend" likes={17} text="какой-то осмысленный текст" />
+        <Post author="Petya" title="Study nuclear reactors for power" likes={17} text="какой-то ядерный текст" />
+        <Post author="Misha" title="Study emotional reaction for psychology" likes={17} text="какой-то психологический текст" />
+        <Post author="Tanya" title="Study reactive substances for chemistry" likes={17} text="какой-то химический текст" />
+        <Post author="Sanya" title="Study reacting for youtube" likes={17} text="какой-то текст" />
+        <Post author="Fedya" title="Study tractor for agriculture" likes={17} text="какой-то трактор" /> 
+        */}
     </section>
     )
 }
