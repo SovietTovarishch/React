@@ -131,3 +131,51 @@ main {
 .actions button:active {
   transform: translateY(0);
 }
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.post-form input {
+  padding: 12px 16px;
+  font-size: larger;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-form textarea {
+  min-height: 100px;
+  font-size: 15px;
+  padding: 12px 16px;
+  border-radius: 5px;
+}
+
+.post-form button {
+  min-height: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: aliceblue;
+  padding: 12px 12px;
+  width: 25%;
+  border-radius: 10px;
+  background-color:cadetblue;
+}
+
+.delete-button {
+  background: #f3f4f6;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.empty-message {
+  font-weight: bold;
+}
+

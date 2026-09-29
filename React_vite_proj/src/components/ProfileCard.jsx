@@ -59,6 +59,12 @@ function ProfileCard() {
         setText("");
     }
 
+    function deletePost(id) {
+        setPosts(
+            posts.filter((post) => post.id !== id
+        ));
+    }
+
     return(
     <section className="profile-card">
         <div className="profile">
@@ -85,14 +91,19 @@ function ProfileCard() {
                 Опубликовать
             </button>
         </form>
-
-        {posts.map((post) => (
+        
+        {posts.length > 0 ? (posts.map((post) => (
             <Post
             key={post.id}
             author={post.author}
             title={post.title}
-            text={post.text} />
-        ))}
+            text={post.text}
+            onDelete={deletePost}
+            id={post.id}/>
+        ))
+    ) : (
+        <p className="empty-message">Опубликуйте свой первый пост</p>
+    )}
 
         {/* 
         <Post author="Viktor" title="Study react for frontend" likes={17} text="какой-то осмысленный текст" />
