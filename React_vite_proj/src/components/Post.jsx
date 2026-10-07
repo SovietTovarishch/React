@@ -3,19 +3,21 @@ import Actions from "./Actions";
 function Post({author, title, text, onDelete, id}) {
     return(
         <div>
-        <article className="post">
-            <h2>{title}</h2>
-            <p className="post-text">{text}</p>
-            <p className="post-author">Автор: {author}</p>
+            <article className="post">
+                <h2>{title}</h2>
+                <p className="post-text">{text}</p>
+                <p className="post-author">Автор: {author}</p>
 
-            <Actions/>
+                <Actions/>
 
-            <button 
-                className="delete-button" 
-                onClick={() => onDelete(id)}>
-                Удалить
-            </button>
-        </article>
+                {onDelete && (
+                    <button 
+                        className="delete-button" 
+                        onClick={() => onDelete(id)}>
+                        Удалить
+                    </button>
+                )}
+            </article>
         </div>
     )
 }

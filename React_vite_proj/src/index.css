@@ -70,6 +70,12 @@ main {
   font-weight: bold;
 }
 
+.avatar img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
 .profile-info h2 {
   margin: 0 0 5px;
 }
@@ -179,3 +185,6 @@ main {
   font-weight: bold;
 }
 
+.navigation{
+  
+}
