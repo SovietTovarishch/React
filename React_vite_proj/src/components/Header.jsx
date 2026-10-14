@@ -7,16 +7,16 @@ function Header() {
             <p>for communication</p>
 
             <nav className="navigation">
-                <Link to={"/"}>
+                <Link className="nav-link" to={"/"}>
                  Main
                 </Link>
-                <Link to={"/profile"}>
+                <Link className="nav-link" to={"/profile"}>
                  Profile
                 </Link>
-                <Link to={"/settings"}>
+                <Link className="nav-link" to={"/settings"}>
                  Settings
                 </Link>
-                <Link to={"/about"}>
+                <Link className="nav-link" to={"/about"}>
                  About this project
                 </Link>
             </nav>
