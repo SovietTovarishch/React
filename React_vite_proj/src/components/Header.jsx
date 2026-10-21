@@ -1,24 +1,30 @@
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 function Header() {
+    const { theme, toggleTheme } = useTheme();
+
     return (
-        <header className="header">
+        <header className={`header theme-${theme}`}>
             <h1>SOCIAL NETWORK</h1>
             <p>for communication</p>
 
-            <nav className="navigation">
-                <Link className="nav-link" to={"/"}>
+            <nav className={`navigation theme-${theme}`}>
+                <Link className={`nav-link theme-${theme}`} to={"/"}>
                  Main
                 </Link>
-                <Link className="nav-link" to={"/profile"}>
+                <Link className={`nav-link theme-${theme}`} to={"/profile"}>
                  Profile
                 </Link>
-                <Link className="nav-link" to={"/settings"}>
+                <Link className={`nav-link theme-${theme}`} to={"/settings"}>
                  Settings
                 </Link>
-                <Link className="nav-link" to={"/about"}>
+                <Link className={`nav-link theme-${theme}`} to={"/about"}>
                  About this project
                 </Link>
+                <button onClick={toggleTheme}>
+                    {theme === "light" ? "🌙" : "☀"}
+                </button>
             </nav>
         </header>
     )
