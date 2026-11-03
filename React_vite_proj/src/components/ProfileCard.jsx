@@ -1,6 +1,6 @@
 //import { useState } from "react";
 //import Post from "./Post";
-import avatar from "../assets/ava.png"
+//import avatar from "../assets/ava.png"
 import { useUser } from "../context/UserContext"
 
 function ProfileCard() {
@@ -66,7 +66,7 @@ function ProfileCard() {
     //         posts.filter((post) => post.id !== id
     //     ));
     // }
-    const { userName } = useUser();
+    const { userName, avatar } = useUser();
 
     return(
     <section className="profile-card">
@@ -75,13 +75,22 @@ function ProfileCard() {
                 <img src={avatar} alt="avatar" />
                 </div>
             <div className="profile-info">
-                <h2>Name</h2>
+                <h2>{userName}</h2>
                 <p>@nickname</p>
             </div>
         </div>
         <p className="profile-description">
             Frontend developer on React
         </p>
+        <div className="profile-avatar">
+            {avatar ? (
+                <img src={avatar} alt="avatar" className="avatar" />
+            ) : (
+                <div className="avatar-placeholder">
+                    {userName.charAt(0).toUpperCase() || "?"}
+                </div>
+            )}
+        </div>
 
         {/* 
             <form className="post-form" onSubmit={addPost}>
