@@ -25,6 +25,9 @@ function Header() {
                 <Link className={`nav-link theme-${theme}`} to={"/weather"}>
                  Weather
                 </Link>
+                <Link className={`nav-link theme-${theme}`} to={"/currency"}>
+                 Currency
+                </Link>
                 <button onClick={toggleTheme}>
                     {theme === "light" ? "🌙" : "☀"}
                 </button>

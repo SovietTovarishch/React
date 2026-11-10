@@ -7,3 +7,5 @@ function WeatherPage() {
         </>
     )
 }
+
+export default WeatherPage;
