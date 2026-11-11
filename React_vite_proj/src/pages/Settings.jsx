@@ -41,19 +41,20 @@ function Settings() {
     }
 
     return (
-        <section className="page">
+        <section className="settings-page">
             <h1>Настройки</h1>
-            <p>Потом добавим здесь настройки</p>
-            <label>
-                Имя пользователя:
-                <input type="text" value={userName} 
-                onChange={(event) =>
-                    setUserName(event.target.value)
-                }/>
-            </label>
-            <p>Текущее имя: {userName}</p>
-
+            <div className="settings-name">
+                <label>
+                    Имя пользователя:
+                    <input type="text" value={userName} 
+                    onChange={(event) =>
+                        setUserName(event.target.value)
+                    }/>
+                </label>
+                <p>Текущее имя: {userName}</p>
+            </div>
             <div className="settings-avatar">
+                <h3>Фотография профиля</h3>
                 {avatar ? (
                     <img src={avatar} alt="avatar" className="avatar" />
                 ) : (
@@ -62,7 +63,6 @@ function Settings() {
                     </div>
                 )}
                 <div className="avatar-controls">
-                    <h3>Фотография профиля</h3>
                     <input ref={fileInputRef} type="file" accept="image/*" onChange={handleAvatarChange}/>
                     <p>Изображение до 1мб</p>
                     {avatar && (<button type="button" onClick={removeAvatar}>Удалить фото</button>)}
